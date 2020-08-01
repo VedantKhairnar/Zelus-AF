@@ -1,0 +1,109 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zelus-AF</title>
+    <link rel="icon" type="image/png" href="static/logo.png"/>
+    <style>
+        #movies {
+            font-family: Verdana, Geneva, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #movies td, #movies th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #movies tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #movies tr:hover {
+            background-color: #ddd;
+        }
+
+        #movies th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #696969;
+            color: white;
+        }
+
+        #column-one {
+            width: 180px;
+        }
+
+        h1 {
+            font-family: Verdana, Geneva, sans-serif;
+            color: tomato;
+        }
+
+        p {
+            font-family: Verdana, Geneva, sans-serif;
+            font-weight: normal;
+            color: black;
+        }
+
+        #notification {
+            font-style: italic;
+            color: tomato;
+        }
+
+        img {
+            width: 100px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <h1 align="center" class="pageHeader">
+        Movie Monk
+        </h1>
+        </head>
+<body>
+
+
+<h1 align="center" style="color: #4776E6">Search Results for <strong style="color: forestgreen">{{ Title }}</strong>
+</h1>
+<p>Best Deals For You!!</p>
+
+
+
+<table id=movies>
+    <col id="column-one">
+    <col id="column-two">
+    <col id="column-three">
+    <col id="column-four">
+    <col id="column-five">
+    <col id="column-six">
+    <col id="column-seven">
+    <tr>
+        <th>Product Image</th>
+        <th>Product Name</th>
+        <th>Seller Platform</th>
+        <th>Price</th>
+<!--        <th>Vote Average</th>-->
+<!--        <th>Release Date</th>-->
+        <th>Product Overview</th>
+    </tr>
+
+    {% for d in allData %}
+
+    <tr>
+        <td><img
+                src= "{{ d['url'] }}" >
+        </td>
+        <td>{{ d['title'] }}</td>
+        <td>{{  d['genres']}}</td>
+        <td>{{ d['popularity'] }}</td>
+<!--        <td>{{ d['vote_average'] }}</td>-->
+<!--        <td>{{ d['release_date'] }}</td>-->
+        <td >{{ d['overview'] }}</td>
+    </tr>
+      {% endfor %}
+
+</table>
+</body>
+</html>
