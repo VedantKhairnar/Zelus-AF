@@ -10,11 +10,11 @@ def recommend():
         Title = request.form['Title']
         # task, Title, allData = rc.supreme(Title)
 
-        task, Title, allData = [1, "MacBook", [{'title': 'Apple MacBook Pro',
-                                                'url': 'https://images-na.ssl-images-amazon.com/images/I/71L2iBSyyOL._SL1500_.jpg',
-                                                'popularity': '₹1,42,990', 'release_date': '2015-12-15',
-                                                'overview': 'Apple MacBook Pro with Touch Bar Core i5 8th Gen - (8 GB/512 GB SSD/Mac OS Catalina) MXK52HN/A  (13 inch, Space Grey, 1.4 kg)',
-                                                'genres': 'Amazon', 'vote_average': 7.4}, {'title': 'Apple MacBook Air',
+        task, Title, allData = [1, "Cedarwood oil", [{'title': 'Cedarwood oil (30G)',
+                                                'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                'popularity': '$14.18', 'release_date': '2015-12-15',
+                                                'overview': 'SKU RM9971-30G',
+                                                'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Apple MacBook Air',
                                                                                            'url': 'https://rukminim1.flixcart.com/image/312/312/jsnjbm80/computer/j/8/c/apple-na-thin-and-light-laptop-original-imafe6f78hur4jbh.jpeg?q=70',
                                                                                            'popularity': '₹69,990',
                                                                                            'release_date': '2015-12-15',
