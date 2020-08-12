@@ -93,7 +93,7 @@ def recommend():
                             'genres': 'Merck', 'vote_average': 7.4}],  
             "Tris hydrochloride": [{'title': 'Tris hydrochloride',
                             'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
-                            'popularity': '$320.06', 'release_date': '2015-12-15',
+                            'popularity': '$380.00', 'release_date': '2015-12-15',
                             'overview': 'SKU RM9971-30G',
                             'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Tris hydrochloride',
                                                                         'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
@@ -108,8 +108,6 @@ def recommend():
 
         task, Title, allData = [1, Title, d[Title]]
 
-        # print(Title)
-        # print(allData)
     return render_template('recommend.html', Title=Title, allData=allData)
 
 
