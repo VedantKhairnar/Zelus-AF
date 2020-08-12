@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request
-import recommender as rc
+
 
 app = Flask(__name__)
 
@@ -8,58 +8,108 @@ app = Flask(__name__)
 def recommend():
     if request.method == "POST":
         Title = request.form['Title']
-        # task, Title, allData = rc.supreme(Title)
 
-        task, Title, allData = [1, "Cedarwood oil", [{'title': 'Cedarwood oil (30G)',
-                                                'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
-                                                'popularity': '$14.18', 'release_date': '2015-12-15',
-                                                'overview': 'SKU RM9971-30G',
-                                                'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Apple MacBook Air',
-                                                                                           'url': 'https://rukminim1.flixcart.com/image/312/312/jsnjbm80/computer/j/8/c/apple-na-thin-and-light-laptop-original-imafe6f78hur4jbh.jpeg?q=70',
-                                                                                           'popularity': '₹69,990',
-                                                                                           'release_date': '2015-12-15',
-                                                                                           'overview': 'Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra) MQD32HN/A A1466  (13.3 inch, Silver, 1.35 kg)',
-                                                                                           'genres': 'Amazon',
-                                                                                           'vote_average': 7.4},
-                                               {'title': 'Apple MacBook Air',
-                                                'url': 'https://rukminim1.flixcart.com/image/312/312/jsnjbm80/computer/j/8/c/apple-na-thin-and-light-laptop-original-imafe6f78hur4jbh.jpeg?q=70',
-                                                'popularity': '₹69,990',
-                                                'release_date': '2015-12-15',
-                                                'overview': 'Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra) MQD32HN/A A1466  (13.3 inch, Silver, 1.35 kg)',
-                                                'genres': 'Flipkart',
-                                                'vote_average': 7.4}, {'title': 'Apple MacBook Pro',
-                                                                       'url': 'https://rukminim1.flixcart.com/image/416/416/kamtsi80/computer/k/a/v/apple-na-thin-and-light-laptop-original-imafs5nmg3kxcqnz.jpeg?q=70',
-                                                                       'popularity': '₹1,74,900',
-                                                                       'release_date': '2015-12-15',
-                                                                       'overview': 'Apple MacBook Pro with Touch Bar Core i5 10th Gen - (16 GB/512 GB SSD/Mac OS Catalina) MWP42HN/A  (13 inch, Space Grey, 1.4 kg)',
-                                                                       'genres': 'Flipkart',
-                                                                       'vote_average': 7.4},{'title': 'Apple MacBook Pro',
-                                                'url': 'https://images-na.ssl-images-amazon.com/images/I/71L2iBSyyOL._SL1500_.jpg',
-                                                'popularity': '₹1,42,990', 'release_date': '2015-12-15',
-                                                'overview': 'Apple MacBook Pro with Touch Bar Core i5 8th Gen - (8 GB/512 GB SSD/Mac OS Catalina) MXK52HN/A  (13 inch, Space Grey, 1.4 kg)',
-                                                'genres': 'Amazon', 'vote_average': 7.4}, {'title': 'Apple MacBook Air',
-                                                                                           'url': 'https://rukminim1.flixcart.com/image/312/312/jsnjbm80/computer/j/8/c/apple-na-thin-and-light-laptop-original-imafe6f78hur4jbh.jpeg?q=70',
-                                                                                           'popularity': '₹69,990',
-                                                                                           'release_date': '2015-12-15',
-                                                                                           'overview': 'Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra) MQD32HN/A A1466  (13.3 inch, Silver, 1.35 kg)',
-                                                                                           'genres': 'Amazon',
-                                                                                           'vote_average': 7.4},
-                                               {'title': 'Apple MacBook Air',
-                                                'url': 'https://rukminim1.flixcart.com/image/312/312/jsnjbm80/computer/j/8/c/apple-na-thin-and-light-laptop-original-imafe6f78hur4jbh.jpeg?q=70',
-                                                'popularity': '₹69,990',
-                                                'release_date': '2015-12-15',
-                                                'overview': 'Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra) MQD32HN/A A1466  (13.3 inch, Silver, 1.35 kg)',
-                                                'genres': 'Flipkart',
-                                                'vote_average': 7.4}, {'title': 'Apple MacBook Pro',
-                                                                       'url': 'https://rukminim1.flixcart.com/image/416/416/kamtsi80/computer/k/a/v/apple-na-thin-and-light-laptop-original-imafs5nmg3kxcqnz.jpeg?q=70',
-                                                                       'popularity': '₹1,74,900',
-                                                                       'release_date': '2015-12-15',
-                                                                       'overview': 'Apple MacBook Pro with Touch Bar Core i5 10th Gen - (16 GB/512 GB SSD/Mac OS Catalina) MWP42HN/A  (13 inch, Space Grey, 1.4 kg)',
-                                                                       'genres': 'Flipkart',
-                                                                       'vote_average': 7.4},  ]]
+        d = {"Tris Base": [{'title': 'Tris Base',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$147.07', 'release_date': '2015-12-15',
+                            'overview': 'SKU RM9971-30G',
+                            'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Tris Base',
+                                                                        'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                                        'popularity': '$138.05', 'release_date': '2015-12-15',
+                                                                        'overview': 'SKU RM9971-30G',
+                                                                        'genres': 'Santa Cruz', 'vote_average': 7.4},
+                           {'title': 'Tris Base',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$140.08', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
+                            'genres': 'Merck', 'vote_average': 7.4}],
+                            
+            "DMEM": [{'title': 'DMEM',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$400.34', 'release_date': '2015-12-15',
+                            'overview': 'SKU RM9971-30G',
+                            'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'DMEM',
+                                                                        'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                                        'popularity': '$398.34', 'release_date': '2015-12-15',
+                                                                        'overview': 'SKU RM9971-30G',
+                                                                        'genres': 'Santa Cruz', 'vote_average': 7.4},
+                           {'title': 'DMEM',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$405.56', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
+                            'genres': 'Merck', 'vote_average': 7.4}],
 
-        print(Title)
-        print(allData)
+            "Triethylammonium bromide": [{'title': 'Triethylammonium bromide',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$537.68', 'release_date': '2015-12-15',
+                            'overview': 'SKU RM9971-30G',
+                            'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Triethylammonium bromide',
+                                                                        'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                                        'popularity': '$460.00', 'release_date': '2015-12-15',
+                                                                        'overview': 'SKU RM9971-30G',
+                                                                        'genres': 'Santa Cruz', 'vote_average': 7.4},
+                           {'title': 'Triethylammonium bromide',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$500.00', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
+                            'genres': 'Merck', 'vote_average': 7.4}],
+            
+            "Bovine Serum Albumin": [{'title': 'Bovine Serum Albumin',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$7200.55', 'release_date': '2015-12-15',
+                            'overview': 'SKU RM9971-30G',
+                            'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Bovine Serum Albumin',
+                                                                        'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                                        'popularity': '$7339.80', 'release_date': '2015-12-15',
+                                                                        'overview': 'SKU RM9971-30G',
+                                                                        'genres': 'Santa Cruz', 'vote_average': 7.4},
+                           {'title': 'Bovine Serum Albumin',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$7238.40', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
+                            'genres': 'Merck', 'vote_average': 7.4}],
+                            
+            "Sodium Citrate": [{'title': 'Sodium Citrate',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$15.32', 'release_date': '2015-12-15',
+                            'overview': 'SKU RM9971-30G',
+                            'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Sodium Citrate',
+                                                                        'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                                        'popularity': '$20.67', 'release_date': '2015-12-15',
+                                                                        'overview': 'SKU RM9971-30G',
+                                                                        'genres': 'Santa Cruz', 'vote_average': 7.4},
+                           {'title': 'Sodium Citrate',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$18.78', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
+                            'genres': 'Merck', 'vote_average': 7.4}],    
+            "SDS": [{'title': 'SDS',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$400.17', 'release_date': '2015-12-15',
+                            'overview': 'SKU RM9971-30G',
+                            'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'SDS',
+                                                                        'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                                        'popularity': '$430.16', 'release_date': '2015-12-15',
+                                                                        'overview': 'SKU RM9971-30G',
+                                                                        'genres': 'Santa Cruz', 'vote_average': 7.4},
+                           {'title': 'SDS',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$398.90', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
+                            'genres': 'Merck', 'vote_average': 7.4}],  
+            "Tris hydrochloride": [{'title': 'Tris hydrochloride',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$320.06', 'release_date': '2015-12-15',
+                            'overview': 'SKU RM9971-30G',
+                            'genres': 'Himedia', 'vote_average': 7.4}, {'title': 'Tris hydrochloride',
+                                                                        'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                                                                        'popularity': '$360.00', 'release_date': '2015-12-15',
+                                                                        'overview': 'SKU RM9971-30G',
+                                                                        'genres': 'Santa Cruz', 'vote_average': 7.4},
+                           {'title': 'Tris hydrochloride',
+                            'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
+                            'popularity': '$340.00', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
+                            'genres': 'Merck', 'vote_average': 7.4}],  
+                        }
+
+        task, Title, allData = [1, Title, d[Title]]
+
+        # print(Title)
+        # print(allData)
     return render_template('recommend.html', Title=Title, allData=allData)
 
 
@@ -71,7 +121,6 @@ def redirection():
 @app.route('/home')
 def homePage():
     return render_template('home.html')
-
 
 if __name__ == '__main__':
     app.debug = True
