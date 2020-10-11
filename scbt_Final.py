@@ -260,10 +260,10 @@ def Product_URLs(URL):
 
 
 ######################################
-def URL_Generator():
+def URL_Generator(query):
     # Enter Query
-# query = "Bleaching Powder"
-    query = input("Enter your query: ")
+    # query = "Bleaching Powder"
+    # query = input("Enter your query: ")
 
     # Manipulating query to pass in the url
     query = query.split(' ')
@@ -285,5 +285,5 @@ def URL_Generator():
 
 
 ######################################
-if __name__ == "__main__":
-    URL_Generator()
+# if __name__ == "__main__":
+#     URL_Generator()

@@ -1,0 +1,55 @@
+[{
+    "PRODUCT": "Glycine, 500 g",
+    "CATALOG": "sc-29096A",
+    "UNIT": "500 g",
+    "PRICE": "$20.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}, {
+    "PRODUCT": "Glycine, 1 kg",
+    "CATALOG": "sc-29096",
+    "UNIT": "1 kg",
+    "PRICE": "$30.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}, {
+    "PRODUCT": "Glycine, 3 kg",
+    "CATALOG": "sc-29096B",
+    "UNIT": "3 kg",
+    "PRICE": "$66.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}, {
+    "PRODUCT": "Glycine, 10 kg",
+    "CATALOG": "sc-29096C",
+    "UNIT": "10 kg",
+    "PRICE": "$181.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}, {
+    "PRODUCT": "Tris Base solution, 100 ml",
+    "CATALOG": "sc-301944",
+    "UNIT": "100 ml",
+    "PRICE": "$18.00",
+    "IMAGE": "https://media.scbt.com/product/14/30/b/143018/143018.jpg"
+}, {
+    "PRODUCT": "Tris base, 500 g",
+    "CATALOG": "sc-3715",
+    "UNIT": "500 g",
+    "PRICE": "$27.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}, {
+    "PRODUCT": "Tris base, 1 kg",
+    "CATALOG": "sc-3715A",
+    "UNIT": "1 kg",
+    "PRICE": "$45.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}, {
+    "PRODUCT": "Tris base, 5 kg",
+    "CATALOG": "sc-3715B",
+    "UNIT": "5 kg",
+    "PRICE": "$199.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}, {
+    "PRODUCT": "Tris base, 10 kg",
+    "CATALOG": "sc-3715C",
+    "UNIT": "10 kg",
+    "PRICE": "$397.00",
+    "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+}]

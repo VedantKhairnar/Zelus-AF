@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request
-
+import scbt_Final as sc
 
 app = Flask(__name__)
 
@@ -8,6 +8,8 @@ app = Flask(__name__)
 def recommend():
     if request.method == "POST":
         Title = request.form['Title']
+
+        print(sc.URL_Generator("Tris Base"))
 
         d = {"Tris Base": [{'title': 'Tris Base',
                             'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
