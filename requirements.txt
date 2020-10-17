@@ -11,7 +11,8 @@ requests==2.24.0
 selenium==3.141.0
 soupsieve==2.0.1
 urllib3==1.25.10
-webdriver-manager==3.2.2Click==7.0
+webdriver-manager==3.2.2
+Click==7.0
 Flask==1.1.1
 gunicorn==19.9.0
 itsdangerous==1.1.0
