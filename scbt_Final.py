@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import time
 import json
 from selenium import webdriver
 from multiprocessing.pool import ThreadPool, Pool
@@ -173,8 +172,11 @@ def main(links):
     # Threading
     ThreadPool(length).map(scrape_links, links[0:length])
     # Dump data to data.json file
+    data_json = {
+        'SCBT' : data_SCBT
+    }
     with open('data.json', 'w') as f:
-        json.dump(data_SCBT, f)
+        json.dump(data_json, f)
 
 
 ######################################
@@ -208,8 +210,11 @@ def Product_URLs(URL):
 
             scrape_links(response.url)
 
+            data_json = {
+                'SCBT' : data_SCBT
+            }
             with open('data.json', 'w') as f:
-                json.dump(data_SCBT, f)
+                json.dump(data_json, f)
             exit()
 
 
