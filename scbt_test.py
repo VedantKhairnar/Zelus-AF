@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import logging
 import threading
 from time import sleep, time
+import os
 
 # start time of script
 start = time()
@@ -45,8 +46,9 @@ def get_driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
+    options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     if driver is None:
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
         setattr(threadLocal, 'driver', driver)
 
     return driver
@@ -265,10 +267,10 @@ def Product_URLs(URL):
 
 
 ######################################
-def URL_Generator(query):
+def URL_Generator():
     # Enter Query
-    # query = "Bleaching Powder"
-    # query = input("Enter your query: ")
+# query = "Bleaching Powder"
+    query = input("Enter your query: ")
 
     # Manipulating query to pass in the url
     query = query.split(' ')
@@ -290,5 +292,5 @@ def URL_Generator(query):
 
 
 ######################################
-# if __name__ == "__main__":
-#     URL_Generator()
+if __name__ == "__main__":
+    URL_Generator()
