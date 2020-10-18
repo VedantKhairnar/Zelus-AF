@@ -82,7 +82,7 @@
     <tr>
         <th>Product Image</th>
         <th>Product Name</th>
-        <th>Seller Platform</th>
+        <th>CATALOG</th>
         <th>Price</th>
 <!--        <th>Vote Average</th>-->
 <!--        <th>Release Date</th>-->
@@ -93,11 +93,12 @@
 
     <tr>
         <td><img
-                src= "{{ d['url'] }}" >
+                src= "{{ d['IMAGE'] }}" >
         </td>
-        <td>{{ d['title'] }}</td>
-        <td>{{  d['genres']}}</td>
-        <td>{{ d['popularity'] }}</td>
+        <td>{{ d['PRODUCT'] }}</td>
+        <!-- <td>{{  d['SCBT']}}</td> -->
+        <td>{{ d['CATALOG'] }}</td>
+        <td>{{ d['PRICE'] }}</td>
 <!--        <td>{{ d['vote_average'] }}</td>-->
 <!--        <td>{{ d['release_date'] }}</td>-->
         <!-- <td >{{ d['overview'] }}</td> -->

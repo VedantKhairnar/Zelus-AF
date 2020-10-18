@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import logging
 import threading
 from time import sleep, time
-
+# requests, webdriver_manager, 
 # start time of script
 start = time()
 

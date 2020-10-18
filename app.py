@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, request
 import scbt_Final as sc
-
+import json
 app = Flask(__name__)
 
 
@@ -9,8 +9,15 @@ def recommend():
     if request.method == "POST":
         Title = request.form['Title']
 
-        print(sc.URL_Generator("Tris Base"))
+        sc.URL_Generator(Title)
+        
+        #-------------------
+        with open('./data.json') as f:
+            d = json.load(f)
+        d = d['SCBT']
+        print("FINAL!!",d)
 
+        """
         d = {"Tris Base": [{'title': 'Tris Base',
                             'url': 'http://cdna1.zoeysite.com/Adzpo594RQGDpLcjBynL1z/cache=expiry:31536000/resize=fit:max,width:1200//auto_image/compress/https://s3.amazonaws.com/zcom-media/sites/a0iE000000P2ZHyIAN/media/catalog/product/r/m/rm9971-30g.jpg',
                             'popularity': '$147.07', 'release_date': '2015-12-15',
@@ -107,8 +114,11 @@ def recommend():
                             'popularity': '$340.00', 'release_date': '2015-12-15',          'overview': 'SKU RM9971-30G',
                             'genres': 'Merck', 'vote_average': 7.4}],  
                         }
+        """
+        
 
-        task, Title, allData = [1, Title, d[Title]]
+       
+        task, Title, allData = [1, Title, d]
 
     return render_template('recommend.html', Title=Title, allData=allData)
 
