@@ -7,7 +7,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 import logging
 import threading
 from time import sleep, time
-# requests, webdriver_manager, 
+import os
+from selenium.webdriver.common.by import By
+
+# requests, webdriver_manager, + 
 # start time of script
 start = time()
 
@@ -44,6 +47,8 @@ def get_driver():
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
     if driver is None:
         driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
@@ -226,7 +231,7 @@ def Product_URLs(URL):
     try:
         soup = BeautifulSoup(response.text, 'lxml')
         source_code = soup.prettify()
-# print(source_code)
+        # print(source_code)
     except Exception as e:
         print(f'Source Code {e}\nTry Again!')
         URL_Generator()

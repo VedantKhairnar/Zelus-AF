@@ -10,12 +10,15 @@ def recommend():
         Title = request.form['Title']
 
         sc.URL_Generator(Title)
-        
-        #-------------------
+
+        # -------------------
         with open('./data.json') as f:
             d = json.load(f)
+        with open('empty.txt', 'w') as json_file:
+            json.dump({}, json_file)
+        print("dddddd",d)
         d = d['SCBT']
-        print("FINAL!!",d)
+        print("FINAL!!", d)
 
         """
         d = {"Tris Base": [{'title': 'Tris Base',
@@ -115,9 +118,7 @@ def recommend():
                             'genres': 'Merck', 'vote_average': 7.4}],  
                         }
         """
-        
 
-       
         task, Title, allData = [1, Title, d]
 
     return render_template('recommend.html', Title=Title, allData=allData)
@@ -131,6 +132,7 @@ def redirection():
 @app.route('/home')
 def homePage():
     return render_template('home.html')
+
 
 if __name__ == '__main__':
     app.debug = True
