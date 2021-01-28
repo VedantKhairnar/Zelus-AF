@@ -1,5 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
 import json
 from selenium import webdriver
 from multiprocessing.pool import ThreadPool, Pool
@@ -8,6 +7,7 @@ import logging
 import threading
 from time import sleep, time
 import os
+from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 
 # requests, webdriver_manager, + 
