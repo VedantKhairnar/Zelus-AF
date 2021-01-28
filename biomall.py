@@ -10,9 +10,9 @@ import pprint
 
 class BIOMALL:
 
-    def __init__(self, path):
+    def __init__(self, query):
 
-        self.path = path  # CHROMEDRIVER PATH
+        self.path = 'chromedriver_linux/chromedriver'  # CHROMEDRIVER PATH
 
         self.start = time()  # RECORD THE TIME WHEN SCRAPING START
 
@@ -25,7 +25,7 @@ class BIOMALL:
 
         self.threadLocal = threading.local()  # MULTIPLE THREAD INITIALIZER
 
-        self.query = input("ENTER PRODUCT NAME: ")
+        self.query = query
 
         self.url = self.url_generator()  # GENERATE URL FROM QUERY
 
@@ -224,7 +224,8 @@ class BIOMALL:
 
 if __name__ == '__main__':
     
-    BIOMALL(path='chromedriver_linux/chromedriver')
+    query = input("ENTER PRODUCT NAME: ")
+    BIOMALL(query=query)
 
 
 
