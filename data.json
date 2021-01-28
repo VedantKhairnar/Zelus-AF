@@ -1,1 +1,21 @@
-{"SCBT": [{"PRODUCT": "Isopentylbenzene, 5 ml", "CATALOG": "sc-228371", "UNIT": "5 ml", "PRICE": "$80.00", "IMAGE": "https://media.scbt.com/product/10/42/b/104264/104264.jpg"}, {"PRODUCT": "rac-2-[(1-Amino-3-methyl)butyl]aniline, 2.5 g", "CATALOG": "sc-480754", "UNIT": "2.5 g", "PRICE": "$300.00", "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"}, {"PRODUCT": "4-tert-Butylthiobenzamide, 250 mg", "CATALOG": "sc-277666", "UNIT": "250 mg", "PRICE": "$72.00", "IMAGE": "https://media.scbt.com/product/20/12/b/201245/201245.jpg"}]}
+{
+    "SCBT": [{
+        "PRODUCT": "Isopentylbenzene, 5 ml",
+        "CATALOG": "sc-228371",
+        "UNIT": "5 ml",
+        "PRICE": "$80.00",
+        "IMAGE": "https://media.scbt.com/product/10/42/b/104264/104264.jpg"
+    }, {
+        "PRODUCT": "rac-2-[(1-Amino-3-methyl)butyl]aniline, 2.5 g",
+        "CATALOG": "sc-480754",
+        "UNIT": "2.5 g",
+        "PRICE": "$300.00",
+        "IMAGE": "https://media.scbt.com/scbt-static/assets/images/scbt-spinner-80.gif"
+    }, {
+        "PRODUCT": "4-tert-Butylthiobenzamide, 250 mg",
+        "CATALOG": "sc-277666",
+        "UNIT": "250 mg",
+        "PRICE": "$72.00",
+        "IMAGE": "https://media.scbt.com/product/20/12/b/201245/201245.jpg"
+    }]
+}

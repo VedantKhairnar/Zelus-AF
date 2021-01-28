@@ -12,7 +12,7 @@ class BIOMALL:
 
     def __init__(self, query):
 
-        self.path = 'chromedriver_linux/chromedriver'  # CHROMEDRIVER PATH
+        self.path = 'chromedriver'  # CHROMEDRIVER PATH
 
         self.start = time()  # RECORD THE TIME WHEN SCRAPING START
 
