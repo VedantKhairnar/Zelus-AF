@@ -16,7 +16,10 @@ class BIOMALL:
 
         self.start = time()  # RECORD THE TIME WHEN SCRAPING START
 
-        self.dataBiomall = {}
+        self.dataBiomall = {
+            "Products" : [],
+            "Companies" : []
+        }
 
         # Event Logger
         logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -31,13 +34,13 @@ class BIOMALL:
 
         self.scrape(url=self.url)
 
-        pprint.pprint(self.dataBiomall)
+        # pprint.pprint(self.dataBiomall)
 
         with open('dataBiomall.json', 'w') as f:
             json.dump(self.dataBiomall, f)
 
         # Total running time for BIOMALL
-        print(f"Total Running Time: {int(time() - self.start)} seconds")
+        # print(f"Total Running Time: {int(time() - self.start)} seconds")
 
     def get_driver(self):
 
@@ -150,7 +153,7 @@ class BIOMALL:
 
                     product_price = item.find_element_by_class_name('special-price') \
                         .find_element_by_tag_name('span').text
-                    print(product_price)
+                    # print(product_price)
 
                 except Exception as e:
 
@@ -166,17 +169,17 @@ class BIOMALL:
                         if count == 1:
                             tmp = tag.text
                             product_brand = tmp.split(":")[1].lstrip(" ")
-                            print(product_brand)
+                            # print(product_brand)
 
                         elif count == 2:
                             tmp = tag.text
                             product_catalog = tmp.split(":")[1].lstrip(" ")
-                            print(product_catalog)
+                            # print(product_catalog)
 
                         elif count == 3:
                             tmp = tag.text
                             product_quantity = tmp.split(":")[1].lstrip(" ")
-                            print(product_quantity)
+                            # print(product_quantity)
 
                         else:
                             break
@@ -187,35 +190,24 @@ class BIOMALL:
 
                     print(f'PRODUCT BRAND/CATALOG/QUANTITY ERROR: \n{e}')
 
-                if product_brand in self.dataBiomall:
+                if product_brand not in self.dataBiomall['Companies']:
 
-                    self.dataBiomall[product_brand].append(
-                        {
-                            'PRODUCT': product_title,
-                            'CATALOG': product_catalog,
-                            'UNIT': product_quantity,
-                            'PRICE': product_price,
-                            'IMAGE': product_image
-                        }
-                    )
+                    self.dataBiomall['Companies'].append(product_brand)
 
-                else:
+                data = self.dataBiomall['Products']
 
-                    self.dataBiomall.update(
-                        {
-                            product_brand: [
-                                {
-                                    'PRODUCT': product_title,
-                                    'CATALOG': product_catalog,
-                                    'UNIT': product_quantity,
-                                    'PRICE': product_price,
-                                    'IMAGE': product_image
-                                }
-                            ]
-                        }
-                    )
+                data.append(
+                    {
+                        'PRODUCT': product_title,
+                        'COMPANY': product_brand,
+                        'CATALOG': product_catalog,
+                        'UNIT': product_quantity,
+                        'PRICE': product_price,
+                        'IMAGE': product_image
+                    }
+                )
 
-                print('\n>>>>>>>>>>>>>>>>>>>>>\n')
+                # print('\n>>>>>>>>>>>>>>>>>>>>>\n')
 
 
         driver.quit()

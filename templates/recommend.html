@@ -1,8 +1,9 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Zelus-AF</title>
-    <link rel="icon" type="image/png" href="static/logo.png"/>
+    <link rel="icon" type="image/png" href="static/logo.png" />
     <style>
         #movies {
             font-family: Verdana, Geneva, sans-serif;
@@ -10,7 +11,8 @@
             width: 100%;
         }
 
-        #movies td, #movies th {
+        #movies td,
+        #movies th {
             border: 1px solid #ddd;
             padding: 8px;
         }
@@ -60,51 +62,97 @@
     </style>
     <h1 align="center" class="pageHeader">
         Zelus-AF
-        </h1>
-        </head>
+    </h1>
+</head>
+
 <body>
 
 
-<h1 align="center" style="color: #4776E6">Search Results for <strong style="color: forestgreen">{{ Title }}</strong>
-</h1>
-<p>Best Deals For You!!</p>
+    <h1 align="center" style="color: #4776E6">Search Results for <strong style="color: forestgreen">{{ Title }}</strong>
+    </h1>
+    <p>Best Deals For You!!</p>
 
+    <p>Add the Company filter here</p>
+<form method="POST" action="/recommend">
 
+</form>
+    <div>
+        <input type="checkbox" id="Loba Chemle" name="Loba Chemle" checked>
+        <label for="scales">Loba Chemle</label>
+    </div>
 
-<table id=movies>
-    <col id="column-one">
-    <col id="column-two">
-    <col id="column-three">
-    <col id="column-four">
-    <col id="column-five">
-    <col id="column-six">
-    <col id="column-seven">
-    <tr>
-        <th>Product Image</th>
-        <th>Product Name</th>
-        <th>CATALOG</th>
-        <th>Price</th>
-<!--        <th>Vote Average</th>-->
-<!--        <th>Release Date</th>-->
-        <!-- <th>Product Overview</th> -->
-    </tr>
+    <div>
+        <input type="checkbox" id="HIMEDIA" name="horns">
+        <label for="horns">HIMEDIA</label>
+    </div>
 
-    {% for d in allData %}
+    <div>
+        <input type="checkbox" id="BR Biochem Life Sciences" name="BR Biochem Life Sciences" checked>
+        <label for="BR Biochem Life Sciences">BR Biochem Life Sciences</label>
+    </div>
 
-    <tr>
-        <td><img
-                src= "{{ d['IMAGE'] }}" >
-        </td>
-        <td>{{ d['PRODUCT'] }}</td>
-        <!-- <td>{{  d['SCBT']}}</td> -->
-        <td>{{ d['CATALOG'] }}</td>
-        <td>{{ d['PRICE'] }}</td>
-<!--        <td>{{ d['vote_average'] }}</td>-->
-<!--        <td>{{ d['release_date'] }}</td>-->
-        <!-- <td >{{ d['overview'] }}</td> -->
-    </tr>
-      {% endfor %}
+    <div>
+        <input type="checkbox" id="Aura Biotech" name="Aura Biotech">
+        <label for="Aura Biotech">Aura Biotech</label>
+    </div>
 
-</table>
+    <div>
+        <input type="checkbox" id="KT Labs" name="KT Labs" checked>
+        <label for="KT Labs">KT Labs</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="Bangalore GeNel" name="Bangalore GeNel">
+        <label for="Bangalore GeNel">Bangalore GeNel</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="MERCK MILLIPORE" name="MERCK MILLIPORE" checked>
+        <label for="MERCK MILLIPORE">MERCK MILLIPORE</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="horns" name="horns">
+        <label for="horns">CYBERLAB</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="scales" name="scales" checked>
+        <label for="scales">Sigma Aldrich</label>
+    </div>
+
+    <input type="submit" value="Filter">
+
+    <table id=movies>
+        <col id="column-one">
+        <col id="column-two">
+        <col id="column-three">
+        <col id="column-four">
+        <col id="column-five">
+        <col id="column-six">
+        <col id="column-seven">
+        <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Company Name</th>
+            <th>CATALOG</th>
+            <th>Price</th>
+        </tr>
+
+        {% for d in allData %}
+
+        <tr>
+            <td><img src="{{ d['IMAGE'] }}">
+            </td>
+            <td>{{ d['PRODUCT'] }}</td>
+            <td>{{  d['COMPANY']}}</td>
+            <td>{{ d['CATALOG'] }}</td>
+            <td>{{ d['PRICE'] }}</td>
+        
+        </tr>
+        {% endfor %}
+
+    </table>
 </body>
+
 </html>

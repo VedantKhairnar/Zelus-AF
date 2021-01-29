@@ -449,3 +449,12 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 55px;
 }
+
+p,
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: .4rem;
+}
