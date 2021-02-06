@@ -159,3 +159,7 @@ hr.new1 {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+backwall{
+    background-image:url("../bg.jpg");
+}

@@ -21,14 +21,14 @@
 <body>
 	<header>
 		<div>
-			<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+			<nav class="navbar navbar-expand-lg navbar-light ">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
 					aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-					<a class="navbar-brand text-white bg-dark" href="#">LOGO</a>
-					<ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+					<a class="navbar-brand text-white" href="#">LOGO</a>
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 						<li class="nav-item active ">
 							<a class="nav-link text-white bg-dark" href="#">Home <span
 									class="sr-only">(current)</span></a>
@@ -48,61 +48,67 @@
 							</div>
 						</li>
 					</ul>
+				</nav>
+				<nav class="navbar navbar-expand-lg navbar-light " style="background-image:url(./../static/bg.jpg);">
+
 					<form class="form-inline my-2 my-lg-0" method="POST" action="/recommend">
-						<row>
-							<input type="text" required="required" name="Title"
+						<row style="padding: 30px;">
+							<input type="text" required="required" name="Title" 
 								placeholder="Enter your Search Product"><br><br>
 						</row>
 						<row>
-							<div>
 								<input type="checkbox" id="Loba Chemle" name="Loba Chemle">
-								<label for="Loba Chemle">Loba Chemle</label>
-							</div>
-
-							<div>
+								<label for="Loba Chemle" style="color: rgb(238, 255, 0);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: larger;">Loba Chemle</label>
+					
+							<div style="padding: 20px;">
 								<input type="checkbox" id="HIMEDIA" name="HIMEDIA">
-								<label for="HIMEDIA">HIMEDIA</label>
-							</div>
-
-							<div>
-								<input type="checkbox" id="BR Biochem Life Sciences" name="BR Biochem Life Sciences">
-								<label for="BR Biochem Life Sciences">BR Biochem Life Sciences</label>
-							</div>
-
-							<div>
-								<input type="checkbox" id="Aura Biotech" name="Aura Biotech">
-								<label for="Aura Biotech">Aura Biotech</label>
-							</div>
-
-							<div>
-								<input type="checkbox" id="KT Labs" name="KT Labs">
-								<label for="KT Labs">KT Labs</label>
-							</div>
-
-							<div>
-								<input type="checkbox" id="Bangalore GeNel" name="Bangalore GeNel">
-								<label for="Bangalore GeNel">Bangalore GeNel</label>
-							</div>
-
-							<div>
-								<input type="checkbox" id="MERCK MILLIPORE" name="MERCK MILLIPORE">
-								<label for="MERCK MILLIPORE">MERCK MILLIPORE</label>
-							</div>
-
-							<div>
-								<input type="checkbox" id="CYBERLAB" name="CYBERLAB">
-								<label for="CYBERLAB">CYBERLAB</label>
-							</div>
-
-							<div>
-								<input type="checkbox" id="SigmaAldrich" name="SigmaAldrich">
-								<label for="SigmaAldrich">Sigma Aldrich</label>
+								<label for="HIMEDIA"  style="color: rgb(238, 255, 0);">HIMEDIA</label>
 							</div>
 						</row>
 						<row>
+							<div style="padding: 20px;">
+								<input type="checkbox" id="BR Biochem Life Sciences" name="BR Biochem Life Sciences">
+								<label for="BR Biochem Life Sciences"  style="color:rgb(238, 255, 0);">BR Biochem Life Sciences</label>
+							</div>
+				
+							<div style="padding: 20px;">
+								<input type="checkbox" id="Aura Biotech" name="Aura Biotech">
+								<label for="Aura Biotech"  style="color: rgb(238, 255, 0);">Aura Biotech</label>
+							</div>
+						</row>
+						<row>
+							<div style="padding: 20px;">
+								<input type="checkbox" id="KT Labs" name="KT Labs">
+								<label for="KT Labs"  style="color: rgb(238, 255, 0);">KT Labs</label>
+							</div>
+						
+							<div style="padding: 20px;">
+								<input type="checkbox" id="Bangalore GeNel" name="Bangalore GeNel">
+								<label for="Bangalore GeNel"  style="color: rgb(238, 255, 0);">Bangalore GeNel</label>
+							</div>
+						</row>
+						<row>
+							<div style="padding: 20px;">
+								<input type="checkbox" id="MERCK MILLIPORE" name="MERCK MILLIPORE">
+								<label for="MERCK MILLIPORE"  style="color: rgb(238, 255, 0);">MERCK MILLIPORE</label>
+							</div>
+					
+							<div style="padding: 20px;">
+								<input type="checkbox" id="CYBERLAB" name="CYBERLAB">
+								<label for="CYBERLAB"  style="color: rgb(238, 255, 0);">CYBERLAB</label>
+							</div>
+						</row>
+						<row>
+							<div style="padding: 20px;">
+								<input type="checkbox" id="SigmaAldrich" name="SigmaAldrich">
+								<label for="SigmaAldrich"  style="color: rgb(238, 255, 0);">Sigma Aldrich</label>
+							</div>
+						</row>
+						<row>
+						<row>
 							<input type="submit" value="Search">
 						</row>
-
+					</row>	
 
 					</form>
 				</div>
@@ -159,7 +165,7 @@
 								style="font-size: 15px;">Join
 								Us</button>
 							<p
-								style="text-decoration: none; font-family: 'Montserrat', sans-serif; color: #959595; font-size: 12px; padding-top: 10px;">
+								style="text-decoration: none; font-family: 'Montserrat', sans-serif; color: #be1919; font-size: 12px; padding-top: 10px;">
 								&#169; Get Best Offers</p>
 						</div>
 						<div class="col2">

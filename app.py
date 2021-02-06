@@ -17,7 +17,7 @@ def recommend():
         print(final)
       
     
-        # bm.BIOMALL(query=Title)
+        bm.BIOMALL(query=Title)
 
         
         with open('./dataBiomall.json') as f:
