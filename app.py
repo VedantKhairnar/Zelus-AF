@@ -9,11 +9,17 @@ app = Flask(__name__)
 def recommend():
     if request.method == "POST":
         Title = request.form['Title']
-        # companies = request.form.getlist('Loba Chemle')
-        # print("bgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",companies)
-        bm.BIOMALL(query=Title)
+        names = ["Loba Chemle","HIMEDIA","BR Biochem Life Sciences","Aura Biotech","KT Labs","Bangalore GeNel","MERCK MILLIPORE","CYBERLAB","Sigma Aldrich"]
+        final = []
+        for i in names:
+            if i in request.form.keys():    
+                final.append(i)
+        print(final)
+      
+    
+        # bm.BIOMALL(query=Title)
 
-        # -------------------
+        
         with open('./dataBiomall.json') as f:
             d = json.load(f)
         with open('empty.txt', 'w') as json_file:
@@ -24,7 +30,7 @@ def recommend():
 
         task, Title, allData = [1, Title, d] 
 
-    return render_template('recommend.html', Title=Title, allData=allData)
+    return render_template('recommend.html', Title=Title, allData=allData, final = final)
 
 
 @app.route('/')

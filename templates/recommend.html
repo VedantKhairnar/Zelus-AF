@@ -73,55 +73,6 @@
     <p>Best Deals For You!!</p>
 
     <p>Add the Company filter here</p>
-<form method="POST" action="/recommend">
-
-</form>
-    <div>
-        <input type="checkbox" id="Loba Chemle" name="Loba Chemle" checked>
-        <label for="scales">Loba Chemle</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="HIMEDIA" name="horns">
-        <label for="horns">HIMEDIA</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="BR Biochem Life Sciences" name="BR Biochem Life Sciences" checked>
-        <label for="BR Biochem Life Sciences">BR Biochem Life Sciences</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="Aura Biotech" name="Aura Biotech">
-        <label for="Aura Biotech">Aura Biotech</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="KT Labs" name="KT Labs" checked>
-        <label for="KT Labs">KT Labs</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="Bangalore GeNel" name="Bangalore GeNel">
-        <label for="Bangalore GeNel">Bangalore GeNel</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="MERCK MILLIPORE" name="MERCK MILLIPORE" checked>
-        <label for="MERCK MILLIPORE">MERCK MILLIPORE</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="horns" name="horns">
-        <label for="horns">CYBERLAB</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="scales" name="scales" checked>
-        <label for="scales">Sigma Aldrich</label>
-    </div>
-
-    <input type="submit" value="Filter">
 
     <table id=movies>
         <col id="column-one">
@@ -140,7 +91,6 @@
         </tr>
 
         {% for d in allData %}
-
         <tr>
             <td><img src="{{ d['IMAGE'] }}">
             </td>
@@ -148,7 +98,7 @@
             <td>{{  d['COMPANY']}}</td>
             <td>{{ d['CATALOG'] }}</td>
             <td>{{ d['PRICE'] }}</td>
-        
+
         </tr>
         {% endfor %}
 
