@@ -4,6 +4,7 @@ import json
 import logging
 from webdriver_manager.chrome import ChromeDriverManager
 import threading
+import os
 from multiprocessing.pool import ThreadPool, Pool
 import pprint
 
@@ -12,7 +13,7 @@ class BIOMALL:
 
     def __init__(self, query):
 
-        self.path = 'chromedriver'  # CHROMEDRIVER PATH
+        # self.path = 'chromedriver_linux/chromedriver'  # CHROMEDRIVER PATH
 
         self.start = time()  # RECORD THE TIME WHEN SCRAPING START
 
@@ -51,8 +52,8 @@ class BIOMALL:
         options.add_argument("--headless")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-
-        driver = webdriver.Chrome(executable_path=self.path, options=options)
+        options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
 
         if driver is None:
 
