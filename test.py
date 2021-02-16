@@ -52,9 +52,9 @@ class BIOMALL:
         options.add_argument("--headless")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-        options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
-
+        # options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         if driver is None:
             driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
             setattr(self.threadLocal, 'driver', driver)
@@ -76,21 +76,20 @@ class BIOMALL:
         url = []
         for i in range(1, 4):
             url.append(f'https://www.biomall.in/search/{i}?query={q}')
-
+        print(f"URL: {url}")
         return url
 
     def scrape(self, url):
 
         try:
-            self.driver = self.get_driver()  # INITIALIZE CHROME DRIVER
+            driver = self.get_driver()  # INITIALIZE CHROME DRIVER
         except Exception as e:
             print(f'DRIVER INITIALIZATION ERROR: \n{e}')
 
-        driver = self.driver
+        # driver = self.driver
         # driver = getattr(self.threadLocal, 'driver', driver)
-
         i = 1
-        while i < 4 and time() - self.start < 21:
+        while i < 4 and time()-self.start < 21:
 
             try:
 
@@ -209,11 +208,14 @@ class BIOMALL:
 
                 # print('\n>>>>>>>>>>>>>>>>>>>>>\n')
             i += 1
-            # print('TIME: ', time() - self.start)
+            print('TIME: ', time()-self.start)
         driver.quit()
 
 
 if __name__ == '__main__':
     query = input("ENTER PRODUCT NAME: ")
     BIOMALL(query=query)
+
+
+
 
