@@ -18,8 +18,8 @@ class BIOMALL:
         self.start = time()  # RECORD THE TIME WHEN SCRAPING START
 
         self.dataBiomall = {
-            "Products" : [],
-            "Companies" : []
+            "Products": [],
+            "Companies": []
         }
 
         # Event Logger
@@ -56,7 +56,6 @@ class BIOMALL:
         driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
 
         if driver is None:
-
             driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
             setattr(self.threadLocal, 'driver', driver)
 
@@ -75,7 +74,7 @@ class BIOMALL:
         q = '%20'.join(q)
 
         url = []
-        for i in range(1,4):
+        for i in range(1, 4):
             url.append(f'https://www.biomall.in/search/{i}?query={q}')
 
         return url
@@ -90,7 +89,8 @@ class BIOMALL:
         driver = self.driver
         # driver = getattr(self.threadLocal, 'driver', driver)
 
-        for i in range(0,3):
+        i = 1
+        while i < 4 and time() - self.start < 21:
 
             try:
 
@@ -192,7 +192,6 @@ class BIOMALL:
                     print(f'PRODUCT BRAND/CATALOG/QUANTITY ERROR: \n{e}')
 
                 if product_brand not in self.dataBiomall['Companies']:
-
                     self.dataBiomall['Companies'].append(product_brand)
 
                 data = self.dataBiomall['Products']
@@ -209,17 +208,12 @@ class BIOMALL:
                 )
 
                 # print('\n>>>>>>>>>>>>>>>>>>>>>\n')
-
-
+            i += 1
+            # print('TIME: ', time() - self.start)
         driver.quit()
 
 
-
 if __name__ == '__main__':
-    
     query = input("ENTER PRODUCT NAME: ")
     BIOMALL(query=query)
-
-
-
 
