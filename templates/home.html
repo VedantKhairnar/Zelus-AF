@@ -15,6 +15,92 @@
 			width: 100%;
 			height: 100%;
 		}
+
+		.third-level-menu {
+			position: absolute;
+			top: 0;
+			right: -150px;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: none;
+		}
+
+		.third-level-menu>li {
+			height: 30px;
+			background: #999999;
+		}
+
+		.third-level-menu>li:hover {
+			background: #CCCCCC;
+		}
+
+		.second-level-menu {
+			position: absolute;
+			top: 30px;
+			left: 0;
+			width: 100%;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: none;
+		}
+
+		.second-level-menu>li {
+			position: relative;
+			height: 30px;
+			background: #999999;
+		}
+
+		.second-level-menu>li:hover {
+			background: #aaa9a9;
+		}
+
+		.top-level-menu {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.top-level-menu>li {
+			position: relative;
+			float: left;
+			height: 30px;
+			width: 150px;
+			background: #999999;
+		}
+
+		.top-level-menu>li:hover {
+			background: #706e6e;
+		}
+
+		.top-level-menu li:hover>ul {
+			/* On hover, display the next level's menu */
+			display: inline;
+			z-index: 10;
+		}
+
+
+		/* Menu Link Styles */
+
+		.top-level-menu a
+
+		/* Apply to all links inside the multi-level menu */
+			{
+			font: bold 14px Arial, Helvetica, sans-serif;
+			color: #FFFFFF;
+			text-decoration: none;
+			padding: 0 0 0 10px;
+
+			/* Make the link cover the entire list item-container */
+			display: block;
+			line-height: 30px;
+
+		}
+
+		.top-level-menu a:hover {
+			color: #000000;
+		}
 	</style>
 </head>
 
@@ -29,90 +115,138 @@
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 					<a class="navbar-brand text-white" href="#">LOGO</a>
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-						<li class="nav-item active ">
-							<a class="nav-link text-white bg-dark" href="#">Home <span
-									class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item dropdown text-light">
-							<a class="nav-link dropdown-toggle text-white bg-dark" href="#" id="navbarDropdownMenuLink"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Bio Chemicals
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">SDS</a>
-								<a class="dropdown-item" href="#">TRIS Base</a>
-								<a class="dropdown-item" href="#">Sodium Citrate</a>
-								<a class="dropdown-item" href="#">Tris hydrochloride</a>
-								<a class="dropdown-item" href="#">Ethidium Bromide</a>
-								<a class="dropdown-item" href="#">Bovine Serum Albumin</a>
-							</div>
-						</li>
-					</ul>
-				</nav>
-				<nav class="navbar navbar-expand-lg navbar-light " style="background-image:url(./../static/bg.jpg);">
+					
+						<ul class="top-level-menu">
+							<li><a href="#">Home</a></li>
 
-					<form class="form-inline my-2 my-lg-0" method="POST" action="/recommend">
-						<row style="padding: 30px;">
-							<input type="text" required="required" name="Title" 
-								placeholder="Enter your Search Product"><br><br>
-						</row>
-						<row>
-								<input type="checkbox" id="Loba Chemle" name="Loba Chemle">
-								<label for="Loba Chemle" style="color: rgb(238, 255, 0);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: larger;">Loba Chemle</label>
-					
-							<div style="padding: 20px;">
-								<input type="checkbox" id="HIMEDIA" name="HIMEDIA">
-								<label for="HIMEDIA"  style="color: rgb(238, 255, 0);">HIMEDIA</label>
-							</div>
-						</row>
-						<row>
-							<div style="padding: 20px;">
-								<input type="checkbox" id="BR Biochem Life Sciences" name="BR Biochem Life Sciences">
-								<label for="BR Biochem Life Sciences"  style="color:rgb(238, 255, 0);">BR Biochem Life Sciences</label>
-							</div>
-				
-							<div style="padding: 20px;">
-								<input type="checkbox" id="Aura Biotech" name="Aura Biotech">
-								<label for="Aura Biotech"  style="color: rgb(238, 255, 0);">Aura Biotech</label>
-							</div>
-						</row>
-						<row>
-							<div style="padding: 20px;">
-								<input type="checkbox" id="KT Labs" name="KT Labs">
-								<label for="KT Labs"  style="color: rgb(238, 255, 0);">KT Labs</label>
-							</div>
-						
-							<div style="padding: 20px;">
-								<input type="checkbox" id="Bangalore GeNel" name="Bangalore GeNel">
-								<label for="Bangalore GeNel"  style="color: rgb(238, 255, 0);">Bangalore GeNel</label>
-							</div>
-						</row>
-						<row>
-							<div style="padding: 20px;">
-								<input type="checkbox" id="MERCK MILLIPORE" name="MERCK MILLIPORE">
-								<label for="MERCK MILLIPORE"  style="color: rgb(238, 255, 0);">MERCK MILLIPORE</label>
-							</div>
-					
-							<div style="padding: 20px;">
-								<input type="checkbox" id="CYBERLAB" name="CYBERLAB">
-								<label for="CYBERLAB"  style="color: rgb(238, 255, 0);">CYBERLAB</label>
-							</div>
-						</row>
-						<row>
-							<div style="padding: 20px;">
-								<input type="checkbox" id="SigmaAldrich" name="SigmaAldrich">
-								<label for="SigmaAldrich"  style="color: rgb(238, 255, 0);">Sigma Aldrich</label>
-							</div>
-						</row>
-						<row>
+							<!-- <li>
+								<a href="#">Biochemicals</a>
+								<ul class="second-level-menu">
+									<li><a href="#">SDS</a></li>
+									<li><a href="#">TRIS Base</a></li>
+									<li><a href="#">Sodium Citrate</a></li>
+									<li><a href="#">Tris hydrochloride</a></li>
+									<li><a href="#">Ethidium Bromide</a></li>
+									<li><a href="#">Bovine Serum Albumin</a></li>
+								</ul>
+							</li> -->
+							<li>
+								<a href="#">BioServices</a>
+								<ul class="second-level-menu">
+									<li>
+										<a href="#">DNA Xperts </a>
+										<ul class="third-level-menu">
+											<li><a href="#">Next Generation Sequencing Services</a></li>
+											<li><a href="#">QPCR Services</a></li>
+											<li><a href="#">Proteomics Services</a></li>
+											<li><a href="#">Metabolomics Services</a></li>
+											<li><a href="#">Lipidomics Services</a></li>
+											<li><a href="#">Glycomics Services</a></li>
+											<li><a href="#">Flow Cytometry Services</a></li>
+											<li><a href="#">Bioinformatic Services</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Medgenome</a>
+										<ul class="third-level-menu">
+											<li><a href="#">Single Cell Sequencing</a></li>
+											<li><a href="#">TCR Sequencing</a></li>
+											<li><a href="#">BCR Sequencing</a></li>
+											<li><a href="#">RNA Sequencing</a></li>
+											<li><a href="#">Whole Exome/Targeted Sequencing</a></li>
+											<li><a href="#">Epigenetic Sequencing</a></li>
+											<li><a href="#">Single Cell Analysis</a></li>
+											<li><a href="#">TCR Repertoire Analysis</a></li>
+											<li><a href="#">Transcriptome Analysis</a></li>
+											<li><a href="#">Genomic Analysis</a></li>
+											<li><a href="#">Immuno Oncology Solutions</a></li>
+											<li><a href="#">Tumor Microenvironment Analysis</a></li>
+											<li><a href="#">Immune Profiling Services</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Medgenome</a>
+										<ul class="third-level-menu">
+											<li><a href="#">Sanger Sequencing</a></li>
+											<li><a href="#">Proteomics Services</a></li>
+											<li><a href="#">Next Generation Sequencing</a></li>
+											<li><a href="#">Livestock Genetic Testing</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</ul>
+			</nav>
+
+			<nav class="navbar navbar-expand-lg navbar-light " style="background-image:url(./../static/bg.jpg);">
+
+				<form class="form-inline my-2 my-lg-0" method="POST" action="/recommend">
+					<row style="padding: 30px;">
+						<input type="text" required="required" name="Title"
+							placeholder="Enter your Search Product"><br><br>
+					</row>
+					<row>
+						<input type="checkbox" id="Loba Chemle" name="Loba Chemle">
+						<label for="Loba Chemle"
+							style="color: rgb(238, 255, 0);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: larger;">Loba
+							Chemle</label>
+
+						<div style="padding: 20px;">
+							<input type="checkbox" id="HIMEDIA" name="HIMEDIA">
+							<label for="HIMEDIA" style="color: rgb(238, 255, 0);">HIMEDIA</label>
+						</div>
+					</row>
+					<row>
+						<div style="padding: 20px;">
+							<input type="checkbox" id="BR Biochem Life Sciences" name="BR Biochem Life Sciences">
+							<label for="BR Biochem Life Sciences" style="color:rgb(238, 255, 0);">BR Biochem Life
+								Sciences</label>
+						</div>
+
+						<div style="padding: 20px;">
+							<input type="checkbox" id="Aura Biotech" name="Aura Biotech">
+							<label for="Aura Biotech" style="color: rgb(238, 255, 0);">Aura Biotech</label>
+						</div>
+					</row>
+					<row>
+						<div style="padding: 20px;">
+							<input type="checkbox" id="KT Labs" name="KT Labs">
+							<label for="KT Labs" style="color: rgb(238, 255, 0);">KT Labs</label>
+						</div>
+
+						<div style="padding: 20px;">
+							<input type="checkbox" id="Bangalore GeNel" name="Bangalore GeNel">
+							<label for="Bangalore GeNel" style="color: rgb(238, 255, 0);">Bangalore GeNel</label>
+						</div>
+					</row>
+					<row>
+						<div style="padding: 20px;">
+							<input type="checkbox" id="MERCK MILLIPORE" name="MERCK MILLIPORE">
+							<label for="MERCK MILLIPORE" style="color: rgb(238, 255, 0);">MERCK MILLIPORE</label>
+						</div>
+
+						<div style="padding: 20px;">
+							<input type="checkbox" id="CYBERLAB" name="CYBERLAB">
+							<label for="CYBERLAB" style="color: rgb(238, 255, 0);">CYBERLAB</label>
+						</div>
+					</row>
+					<row>
+						<div style="padding: 20px;">
+							<input type="checkbox" id="SigmaAldrich" name="SigmaAldrich">
+							<label for="SigmaAldrich" style="color: rgb(238, 255, 0);">Sigma Aldrich</label>
+						</div>
+					</row>
+					<row>
 						<row>
 							<input type="submit" value="Search">
 						</row>
-					</row>	
+					</row>
 
-					</form>
-				</div>
-			</nav>
+				</form>
+		</div>
+		</nav>
 		</div>
 	</header>
 	<!-- Indicators -->
