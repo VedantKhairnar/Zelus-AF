@@ -4,7 +4,6 @@ import json
 import logging
 from webdriver_manager.chrome import ChromeDriverManager
 import threading
-import os
 from multiprocessing.pool import ThreadPool, Pool
 import pprint
 
@@ -13,13 +12,13 @@ class BIOMALL:
 
     def __init__(self, query):
 
-        # self.path = 'chromedriver_linux/chromedriver'  # CHROMEDRIVER PATH
+        self.path = 'chromedriver'  # CHROMEDRIVER PATH
 
         self.start = time()  # RECORD THE TIME WHEN SCRAPING START
 
         self.dataBiomall = {
-            "Products": [],
-            "Companies": []
+            "Products" : [],
+            "Companies" : []
         }
 
         # Event Logger
@@ -52,10 +51,11 @@ class BIOMALL:
         options.add_argument("--headless")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-        options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
+
+        driver = webdriver.Chrome(executable_path=self.path, options=options)
 
         if driver is None:
+
             driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
             setattr(self.threadLocal, 'driver', driver)
 
@@ -74,7 +74,7 @@ class BIOMALL:
         q = '%20'.join(q)
 
         url = []
-        for i in range(1, 4):
+        for i in range(1,4):
             url.append(f'https://www.biomall.in/search/{i}?query={q}')
 
         return url
@@ -89,8 +89,7 @@ class BIOMALL:
         driver = self.driver
         # driver = getattr(self.threadLocal, 'driver', driver)
 
-        i = 1
-        while i < 4 and time() - self.start < 21:
+        for i in range(0,3):
 
             try:
 
@@ -192,10 +191,12 @@ class BIOMALL:
                     print(f'PRODUCT BRAND/CATALOG/QUANTITY ERROR: \n{e}')
 
                 if product_brand not in self.dataBiomall['Companies']:
+
                     self.dataBiomall['Companies'].append(product_brand)
 
                 data = self.dataBiomall['Products']
-
+                product_price = float(product_price[2:].replace(",",""))
+                # print("Hereeeee",product_price)
                 data.append(
                     {
                         'PRODUCT': product_title,
@@ -206,14 +207,19 @@ class BIOMALL:
                         'IMAGE': product_image
                     }
                 )
-
+                
                 # print('\n>>>>>>>>>>>>>>>>>>>>>\n')
-            i += 1
-            # print('TIME: ', time() - self.start)
+
+
         driver.quit()
 
 
+
 if __name__ == '__main__':
+    
     query = input("ENTER PRODUCT NAME: ")
     BIOMALL(query=query)
+
+
+
 

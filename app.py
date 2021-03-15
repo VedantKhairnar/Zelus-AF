@@ -14,7 +14,7 @@ def recommend():
         for i in names:
             if i in request.form.keys():    
                 final.append(i)
-        print(final)
+        # print(final)
       
     
         bm.BIOMALL(query=Title)
@@ -27,6 +27,8 @@ def recommend():
         # print("dddddd", d)
         d = d['Products']
         # print("FINAL!!", d)
+        # print(type(d))
+        d = sorted(d,key=lambda x: x['PRICE'])
 
         task, Title, allData = [1, Title, d] 
 
