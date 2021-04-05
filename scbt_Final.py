@@ -126,7 +126,7 @@ def scrape_links(links_use):
         for tr in table_rows:
             table_data = tr.find_elements_by_tag_name('td')
             Product_Name = table_data[0].text
-            Catalog_Num = table_data[1].text
+            Catalog_Number = table_data[1].text
             Unit = table_data[2].text
             Price = table_data[3].text
             print(f'{Product_Name}\n{Catalog_Num}\n{Unit}\n{Price}')
@@ -134,7 +134,7 @@ def scrape_links(links_use):
             # Store as dictionary
             data = {
                 'PRODUCT': Product_Name,
-                'CATALOG': Catalog_Num,
+                'CATALOG': Catalog_Number,
                 'UNIT': Unit,
                 'PRICE': Price,
                 'IMAGE': Image
