@@ -4,7 +4,6 @@ import json
 import logging
 from webdriver_manager.chrome import ChromeDriverManager
 import threading
-import os
 from multiprocessing.pool import ThreadPool, Pool
 import pprint
 
@@ -13,7 +12,7 @@ class BIOMALL:
 
     def __init__(self, query):
 
-        # self.path = 'chromedriver_linux/chromedriver'  # CHROMEDRIVER PATH
+        self.path = 'chromedriver'  # CHROMEDRIVER PATH
 
         self.start = time()  # RECORD THE TIME WHEN SCRAPING START
 
@@ -52,8 +51,8 @@ class BIOMALL:
         options.add_argument("--headless")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-        options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=options)
+
+        driver = webdriver.Chrome(executable_path=self.path, options=options)
 
         if driver is None:
             driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
@@ -195,7 +194,8 @@ class BIOMALL:
                     self.dataBiomall['Companies'].append(product_brand)
 
                 data = self.dataBiomall['Products']
-
+                product_price = float(product_price[2:].replace(",",""))
+                # print("Hereeeee",product_price)
                 data.append(
                     {
                         'PRODUCT': product_title,
@@ -206,7 +206,7 @@ class BIOMALL:
                         'IMAGE': product_image
                     }
                 )
-
+                
                 # print('\n>>>>>>>>>>>>>>>>>>>>>\n')
             i += 1
             # print('TIME: ', time() - self.start)
